@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class Product < ApplicationRecord
   validates :product_name, presence: true, uniqueness: true, length: { minimum: 2, maximum: 100 }
   validates :price, presence: true

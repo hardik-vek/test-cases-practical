@@ -1,5 +1,7 @@
+# frozen_string_literal: true
 class ProductsController < ApplicationController
   before_action :authenticate_user!
+  before_action :auth_admin, except: [:show]
   before_action :find_product, only: [:show, :edit, :update, :destroy]
   before_action :require_same_user, only: [:edit, :update, :destroy]
 

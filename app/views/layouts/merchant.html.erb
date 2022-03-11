@@ -1,0 +1,26 @@
+<body>
+  <center>
+    <p class="notice" style="color: red"><%= notice %></p>
+    <p class="alert" style="color: red"><%= alert %></p>
+  </center>
+  <%= stylesheet_link_tag "application" %>
+  <center>
+    <h1>Welcome to merchant page</h1>
+    <h2>Products</h2>
+    <table>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Price</th>
+      <% @products.each do |product| %>
+        <tr>
+          <td><%= product.product_name %></td>
+          <td><%= product.description %></td>
+          <td><%= product.price %></td>
+        </tr>
+      <% end %>
+    </table>
+  </center>
+  <center>
+    <%= button_to "sign Out", destroy_user_session_path, method: :delete %></br>
+</center>
+</body>
